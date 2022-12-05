@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SharpScraper.Models.CyprusLinksModel>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h3>CYPRUS OFFICIAL LINKS LIST</h3>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Link</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.title</td>
+                        <td><a href="@item.linkUrl">@item.linkUrl</a></td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
